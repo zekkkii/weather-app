@@ -1,0 +1,173 @@
+html,
+body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.bakckground-image {
+    background-image: url("/img/img_background.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.form {
+    width: 100%;
+    height: 85%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.block {
+    display: block;
+}
+
+.mensaje {
+    color: #fff;
+    font-weight: bold;
+    background-color: #b30000;
+    padding: 1rem 0;
+    text-align: center;
+    margin: 0;
+}
+
+.mensaje-container {
+    height: 4%;
+    padding: .001rem 0;
+}
+
+.name-app {
+    display: flex;
+    justify-content: center;
+    font-size: 4rem;
+    color: #fff;
+    font-weight: bold;
+    text-shadow: 1px 0px 5px black;
+    margin-bottom: 0;
+}
+
+@media only screen and (max-width: 600px) {
+    .name-app {
+        font-size: 12vw;
+    }
+}
+
+#clock {
+    margin-bottom: 1rem;
+    text-align: center;
+    font-size: 3rem;
+    font-weight: bold;
+    color: #fff;
+}
+
+@media only screen and (max-width: 600px) {
+    #clock {
+        font-size: 10vw;
+    }
+}
+
+input {
+    background-color: w#fff;
+    width: 30rem;
+    padding: 1rem .5rem;
+    border: none;
+    outline: none;
+    text-align: center;
+}
+
+@media only screen and (max-width: 600px) {
+    input {
+        width: 100%;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .input {
+        width: 10vw;
+        padding: 2vh .10vw;
+    }
+}
+
+button {
+    padding: 1rem 3rem;
+    color: #fff;
+    background-color: #1a53ff;
+    font-weight: bold;
+    border: none;
+}
+
+button:hover {
+    background-color: #0039e6;
+    transition: .2s ease;
+}
+
+.button {
+    display: flex;
+    justify-content: center;
+    padding: .7rem 0;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+}
+
+.results {
+    display: block;
+    align-content: center;
+}
+
+.ciudad {
+    color: #fff;
+    font-size: 2rem;
+    text-align: center;
+    margin: 0;
+    text-transform: capitalize;
+    font-weight: bold;
+    text-shadow: 1px 0 10px #000;
+}
+
+.temp {
+    display: flex;
+    justify-content: center;
+    color: #fff;
+    font-size: 3rem;
+    text-align: center;
+    font-weight: bold;
+    text-shadow: 1px 0 10px #000;
+}
+
+.descripcion {
+    color: #f2f2f2;
+    font-size: 2rem;
+    text-align: center;
+    font-weight: bold;
+    text-shadow: 1px 0 10px #000;
+    text-transform: capitalize;
+}
+
+footer p {
+    color: #fff;
+    font-weight: bold;
+    margin: 0 1rem;
+    text-align: center;
+}
+
+footer a {
+    color: #fff;
+    text-decoration: none;
+    text-shadow: 1px 0px 10px black;
+    margin: 0 .5rem;
+}
+
+#year {
+    margin: 0 .5rem;
+}
+
+img {
+    width: 4.3rem;
+    height: 4.3rem;
+}

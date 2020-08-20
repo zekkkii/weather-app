@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather app in nodeJs</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body class="bakckground-image">
+    <div class="mensaje-container">
+        <% if(mensaje !=""){ %>
+            <p class="mensaje">
+                <%=mensaje%>
+            </p>
+
+            <% } %>
+
+    </div>
+    <form action="/" method="POST" class="form">
+
+        <div class="container">
+
+            <div class="block">
+
+                <h1 class="name-app">
+                    Weather App
+                </h1>
+
+                <div id="clock">
+                </div>
+
+                <div>
+
+                    <input type="text" placeholder="Write the city" name="dataInput" id="dataInput" required>
+                </div>
+    </form>
+
+    <div class="button">
+
+        <button id="button">Find</button>
+    </div>
+
+    <div class="results">
+        <p class="ciudad">
+            <%=city%>
+        </p>
+        <div class="temp">
+            <div class="icon">
+                <% if(icon !=""){ %>
+
+                    <img src="<%=icon%>">
+                    <% } %>
+            </div>
+            <div class="temperatura">
+                <%=temp%>
+            </div>
+        </div>
+
+    </div>
+    <div class="descripcion">
+        <%=description%>
+    </div>
+
+
+    </div>
+
+    </div>
+
+    <footer>
+        <p>
+            &copy;<span id="year"></span> App made with nodeJs, express and ejs by <a href="http://www.zekkkii.xyz/" target="_blank"> EV </a>
+        </p>
+
+
+    </footer>
+
+
+
+    <script src="/js/main.js"></script>
+
+</body>
+
+</html>

@@ -30,9 +30,12 @@ app.get("/", (req, res) => {
         city: ciudad
     })
 
-    temperatura = ""
-    descr = ""
-    iconWeather = ""
+
+    var temperatura = ""
+    var descr = ""
+    var iconWeather = ""
+    var mensaje = ""
+    var ciudad = ""
 })
 
 app.post("/", async(req, res) => {

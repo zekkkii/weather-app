@@ -14,30 +14,20 @@ app.use(express.static("public"))
 
 //internal vars of the app
 
-var temperatura = ""
-var descr = ""
-var iconWeather = ""
-var mensaje = ""
-var ciudad = ""
 
 
 
 app.get("/", (req, res) => {
     res.render("index", {
-        temp: temperatura,
-        description: descr,
-        icon: iconWeather,
-        mensaje: mensaje,
-        city: ciudad
+        temp: null,
+        description: null,
+        icon: null,
+        mensaje: null,
+        city: null
     })
 
 
-    //this reset all the var after being shown/used
-    temperatura = ""
-    descr = ""
-    iconWeather = ""
-    mensaje = ""
-    ciudad = ""
+
 })
 
 
@@ -55,16 +45,29 @@ app.post("/", async(req, res) => {
                 descr = data.weather[0].description
                 iconWeather = 'http://openweathermap.org/img/wn/' + data.weather[0].icon + '.png'
 
+
+                res.render("index", {
+                    temp: temperatura,
+                    description: descr,
+                    icon: iconWeather,
+                    mensaje: null,
+                    city: dataCity
+                })
+
+
             })
-    }
+    } catch {
 
-    // if something goes wrong the app will reset all the var  
-    catch {
+        res.render("index", {
+            temp: null,
+            description: null,
+            icon: null,
+            mensaje: "Something went wrong, try it again!",
+            city: dataCity
+        })
 
-        mensaje = "Something went wrong, try it again!"
-        temperatura = ""
-        descr = ""
-        iconWeather = ""
+        "Something went wrong, try it again!"
+
 
     }
     res.redirect("/")

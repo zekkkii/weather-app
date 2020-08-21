@@ -66,7 +66,7 @@ app.post("/", async(req, res) => {
             city: dataCity
         })
 
-        "Something went wrong, try it again!"
+
 
 
     }

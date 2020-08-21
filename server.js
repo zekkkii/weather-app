@@ -19,11 +19,11 @@ app.use(express.static("public"))
 
 app.get("/", (req, res) => {
     res.render("index", {
-        temp: null,
-        description: null,
-        icon: null,
-        mensaje: null,
-        city: null
+        temp: "",
+        description: "",
+        icon: "",
+        mensaje: "",
+        city: ""
     })
 
 
@@ -45,23 +45,21 @@ app.post("/", async(req, res) => {
                 descr = data.weather[0].description
                 iconWeather = 'http://openweathermap.org/img/wn/' + data.weather[0].icon + '.png'
 
-
                 res.render("index", {
                     temp: temperatura,
                     description: descr,
                     icon: iconWeather,
-                    mensaje: null,
+                    mensaje: "",
                     city: dataCity
                 })
-
-
             })
+
     } catch {
 
         res.render("index", {
-            temp: null,
-            description: null,
-            icon: null,
+            temp: "",
+            description: "",
+            icon: "",
             mensaje: "Something went wrong, try it again!",
             city: dataCity
         })

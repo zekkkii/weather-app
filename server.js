@@ -12,13 +12,14 @@ app.use(bodyParser.urlencoded({ extended: true }))
 app.use(express.static("public"))
 
 
-//variables de uso interno de la app
+//internal vars of the app
 
 var temperatura = ""
 var descr = ""
 var iconWeather = ""
 var mensaje = ""
 var ciudad = ""
+
 
 
 app.get("/", (req, res) => {
@@ -31,13 +32,16 @@ app.get("/", (req, res) => {
     })
 
 
-    var temperatura = ""
-    var descr = ""
-    var iconWeather = ""
-    var mensaje = ""
-    var ciudad = ""
+    //this reset all the var after being shown/used
+    temperatura = ""
+    descr = ""
+    iconWeather = ""
+    mensaje = ""
+    ciudad = ""
 })
 
+
+//here is the conn to the api 
 app.post("/", async(req, res) => {
     let dataCity = req.body.dataInput
     ciudad = dataCity
@@ -52,11 +56,16 @@ app.post("/", async(req, res) => {
                 iconWeather = 'http://openweathermap.org/img/wn/' + data.weather[0].icon + '.png'
 
             })
-    } catch {
+    }
+
+    // if something goes wrong the app will reset all the var  
+    catch {
+
         mensaje = "Something went wrong, try it again!"
         temperatura = ""
         descr = ""
         iconWeather = ""
+
     }
     res.redirect("/")
 })
